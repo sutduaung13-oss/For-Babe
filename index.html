@@ -1,414 +1,206 @@
 <!DOCTYPE html>
-<html lang="my">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Happy 4 Months Anniversary! 💖</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 3 Months Anniversary! 💕</title>
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            background-color: #fce4ec;
-            color: #4a4a4a;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
             min-height: 100vh;
-            padding: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #333;
+            padding: 20px;
         }
 
-        .container {
+        .card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px 20px;
             width: 100%;
-            max-width: 420px;
-            background: #ffffff;
-            border-radius: 24px;
-            box-shadow: 0 10px 25px rgba(255, 128, 171, 0.3);
+            max-width: 450px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
             overflow: hidden;
-            border: 3px solid #ff80ab;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            min-height: 550px;
         }
 
-        /* Music Overlay */
-        .music-overlay {
+        h1 {
+            color: #ff4b2b;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        p.subtitle {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        /* Overlay */
+        .overlay {
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(255, 240, 245, 0.98);
-            z-index: 100;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .music-btn {
-            background: linear-gradient(135deg, #ff4081, #ff80ab);
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 50px;
-            cursor: pointer;
-            box-shadow: 0 6px 15px rgba(255, 64, 129, 0.4);
-            margin-top: 20px;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .header {
-            background: linear-gradient(135deg, #ff4081 0%, #ff80ab 100%);
-            padding: 18px;
-            text-align: center;
-            color: white;
-        }
-
-        .header h1 {
-            font-size: 18px;
-            font-weight: 700;
-        }
-
-        .card-body {
-            padding: 20px;
-            text-align: center;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .scene-box {
-            position: relative;
-            width: 100%;
-            height: 150px;
-            background-color: #fff0f5;
-            border-radius: 16px;
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-end;
-            padding: 10px;
-            border: 2px dashed #ff80ab;
-        }
-
-        .character {
-            width: 80px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .char-label {
-            font-size: 11px;
-            font-weight: bold;
-            margin-top: 4px;
-            padding: 2px 8px;
-            border-radius: 10px;
-            color: white;
-        }
-
-        .boy .char-label { background-color: #5c6bc0; }
-        .girl .char-label { background-color: #ec407a; }
-
-        .svg-avatar {
-            width: 65px;
-            height: 65px;
-            border-radius: 50%;
-            background: #fff;
-            border: 3px solid #ff80ab;
-        }
-
-        .speech-bubble {
+            top: 0; left: 0; width: 100%; height: 100%;
             background: #ffffff;
-            border-radius: 16px;
-            padding: 16px;
-            position: relative;
-            border: 2px solid #ff4081;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            width: 100%;
-            text-align: left;
-            margin-bottom: 15px;
-            font-size: 14px;
-            line-height: 1.6;
-            color: #333333;
-            min-height: 120px;
-            animation: fadeIn 0.4s ease-in-out;
-            white-space: pre-line;
-        }
-
-        .controls {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            width: 100%;
-            gap: 10px;
-            margin-top: auto;
+            z-index: 100;
+            border-radius: 20px;
+            padding: 20px;
         }
 
         .btn {
-            background-color: #ff4081;
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
             color: white;
             border: none;
-            padding: 12px 18px;
-            border-radius: 50px;
-            font-size: 13px;
-            font-weight: bold;
+            padding: 12px 25px;
+            font-size: 1rem;
+            border-radius: 25px;
             cursor: pointer;
-            box-shadow: 0 4px 10px rgba(255, 64, 129, 0.3);
-            flex: 1;
+            box-shadow: 0 5px 15px rgba(255, 75, 43, 0.4);
+            transition: transform 0.2s;
+            margin-top: 15px;
         }
 
-        .btn:active { transform: scale(0.96); }
-
-        .btn-outline {
-            background-color: transparent;
-            color: #ff4081;
-            border: 2px solid #ff4081;
-            box-shadow: none;
+        .btn:active {
+            transform: scale(0.95);
         }
 
-        .progress-dots {
+        /* Gallery */
+        .gallery {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 10px;
+            padding: 10px 0;
+            margin-bottom: 20px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .gallery img {
+            scroll-snap-align: center;
+            width: 100%;
+            max-width: 380px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 15px;
+            flex-shrink: 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        /* Interactive Question */
+        .question-box {
+            background: #fff0f3;
+            padding: 15px;
+            border-radius: 15px;
+            margin-top: 15px;
+        }
+
+        .btn-group {
             display: flex;
             justify-content: center;
-            gap: 6px;
-            margin-bottom: 12px;
-        }
-
-        .dot {
-            width: 7px;
-            height: 7px;
-            background-color: #ffcdd2;
-            border-radius: 50%;
-            transition: all 0.3s;
-        }
-
-        .dot.active {
-            background-color: #ff4081;
-            width: 18px;
-            border-radius: 10px;
-        }
-
-        /* Gallery Layout */
-        .gallery-container {
-            display: none;
-            width: 100%;
-            flex-direction: column;
             gap: 15px;
-            max-height: 400px;
-            overflow-y: auto;
-            padding-right: 5px;
+            margin-top: 10px;
         }
 
-        .gallery-img {
-            width: 100%;
-            border-radius: 14px;
-            border: 3px solid #ff80ab;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        .btn-yes {
+            background: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
+        .btn-no {
+            background: #f44336;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
 
-<div class="container">
+    <audio id="bgMusic" loop src="song.mp3"></audio>
 
-    <audio id="bgMusic" loop preload="auto">
-        <source src="song.mp3" type="audio/mpeg">
-    </audio>
+    <div class="card">
+        <!-- Start Overlay -->
+        <div class="overlay" id="startOverlay">
+            <h2>💕 Happy 3 Months 💕</h2>
+            <p style="margin-top: 10px; color: #666;">ဖွင့်ကြည့်ဖို့ အောက်က ခလုတ်လေးကို နှိပ်ပါနော်</p>
+            <button class="btn" onclick="startApp()">Open 💕</button>
+        </div>
 
-    <div class="music-overlay" id="musicOverlay">
-        <h2 style="color: #ff4081;">Happy 4 Months Anniversary! 💖</h2>
-        <p style="margin-top: 10px; font-size: 14px; color: #666;">ဒီသီချင်းလေး ဖွင့်ပေးပါနော် ဘေဘီ 💕</p>
-        <button class="music-btn" onclick="startApp()">သီချင်းဖွင့်ပြီး စမယ် 🎵</button>
+        <!-- Main Content -->
+        <h1>Happy 3rd Month Anniversary! ✨</h1>
+        <p class="subtitle">ငါတို့ဆုံတွေ့ခဲ့တာ ၃ လပြည့်သွားပြီနော် ❤️</p>
+
+        <!-- Photo Gallery -->
+        <div class="gallery">
+            <img src="photo1.jpg" alt="Memory 1" onerror="this.src='https://via.placeholder.com/380x280?text=Photo+1'">
+            <img src="photo2.jpg" alt="Memory 2" onerror="this.src='https://via.placeholder.com/380x280?text=Photo+2'">
+            <img src="photo3.jpg" alt="Memory 3" onerror="this.src='https://via.placeholder.com/380x280?text=Photo+3'">
+            <img src="photo4.jpg" alt="Memory 4" onerror="this.src='https://via.placeholder.com/380x280?text=Photo+4'">
+            <img src="photo5.jpg" alt="Memory 5" onerror="this.src='https://via.placeholder.com/380x280?text=Photo+5'">
+        </div>
+
+        <p style="font-size: 0.85rem; color: #888;">👈 ဘေးသို့ ဆွဲကြည့်ပါ 👉</p>
+
+        <!-- Interactive Question -->
+        <div class="question-box">
+            <p id="questionText">ငါ့ကို အရင်ကထက် ပိုချစ်လား? 🥺</p>
+            <div class="btn-group" id="btnGroup">
+                <button class="btn-yes" onclick="sayYes()">ချစ်တာပေါ့ ❤️</button>
+                <button class="btn-no" id="noBtn" onmouseover="moveButton()" onclick="moveButton()">မချစ်ပါဘူး 😜</button>
+            </div>
+            <p id="loveResponse" class="hidden" style="color: #ff4b2b; font-weight: bold; margin-top: 10px;">
+                အမြဲတမ်း ပိုချစ်ပေးရမယ်နော်! 💖✨
+            </p>
+        </div>
     </div>
 
-    <div class="header">
-        <h1 id="headerTitle">Happy 4 Months Anniversary 💖</h1>
-    </div>
-
-    <div class="card-body">
-        
-        <div class="scene-box" id="sceneBox">
-            <div class="character boy">
-                <svg class="svg-avatar" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="45" fill="#ffeaa7"/>
-                    <path d="M 20 40 Q 50 10 80 40 Q 50 25 20 40" fill="#2d3436"/>
-                    <circle cx="38" cy="48" r="5" fill="#2d3436"/>
-                    <circle cx="62" cy="48" r="5" fill="#2d3436"/>
-                    <path d="M 40 65 Q 50 75 60 65" stroke="#2d3436" stroke-width="3" fill="none" stroke-linecap="round"/>
-                    <circle cx="32" cy="56" r="4" fill="#ff7675" opacity="0.6"/>
-                    <circle cx="68" cy="56" r="4" fill="#ff7675" opacity="0.6"/>
-                </svg>
-                <span class="char-label">ကို</span>
-            </div>
-
-            <div class="character girl">
-                <svg class="svg-avatar" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="45" fill="#ffeaa7"/>
-                    <path d="M 15 50 Q 50 5 85 50 Q 85 80 75 85 Q 50 30 25 85 Z" fill="#6c5ce7"/>
-                    <circle cx="75" cy="25" r="7" fill="#ff7675"/>
-                    <circle cx="38" cy="48" r="5" fill="#2d3436"/>
-                    <circle cx="62" cy="48" r="5" fill="#2d3436"/>
-                    <path d="M 42 66 Q 50 73 58 66" stroke="#2d3436" stroke-width="3" fill="none" stroke-linecap="round"/>
-                    <circle cx="30" cy="56" r="5" fill="#ff7675" opacity="0.7"/>
-                    <circle cx="70" cy="56" r="5" fill="#ff7675" opacity="0.7"/>
-                </svg>
-                <span class="char-label">ဘေဘီ</span>
-            </div>
-        </div>
-
-        <div id="quizSection" style="width: 100%;">
-            <div class="speech-bubble">
-                ဘေဘီ... ကို့ကို ချစ်သေးလားဟင်? 🥺💖
-            </div>
-            <div class="controls">
-                <button class="btn" onclick="answerLove(true)">ချစ်တာပေါ့ရှင် 🥰</button>
-                <button class="btn btn-outline" onclick="answerLove(false)">မချစ်ဘူး 😜</button>
-            </div>
-        </div>
-
-        <div id="storySection" style="display: none; width: 100%;">
-            <div class="progress-dots" id="dotsContainer"></div>
-            <div class="speech-bubble" id="speechBox"></div>
-            <div class="controls">
-                <button class="btn btn-outline" id="prevBtn" onclick="prevStep()">နောက်သို့</button>
-                <button class="btn" id="nextBtn" onclick="nextStep()">ရှေ့သို့ ❤️</button>
-            </div>
-        </div>
-
-        <div class="gallery-container" id="gallerySection">
-            <h3 style="color: #ff4081; margin-bottom: 5px;">ငါတို့ရဲ့ အမှတ်တရ ပုံလေးများ 📸</h3>
-            <img src="photo1.jpg" alt="Memory 1" class="gallery-img">
-            <img src="photo2.jpg" alt="Memory 2" class="gallery-img">
-            <img src="photo3.jpg" alt="Memory 3" class="gallery-img">
-            <img src="photo4.jpg" alt="Memory 4" class="gallery-img">
-            <img src="photo5.jpg" alt="Memory 5" class="gallery-img">
-            <button class="btn" style="margin-top: 10px;" onclick="restartStory()">အစကပြန်ကြည့်မယ် 🔄</button>
-        </div>
-
-    </div>
-</div>
-
-<script>
-    const bgMusic = document.getElementById('bgMusic');
-    
-    function startApp() {
-        document.getElementById('musicOverlay').style.display = 'none';
-        bgMusic.play().catch(e => console.log("Audio deferred"));
-    }
-
-    const story = [
-        "ကိုလည်း အများကြီးချစ်တယ်နော် 🥰✨",
-        "Happy 4 Months Anniversary Prr Babe💞\nကိုတို့ အတူရှိခွင့်ရတာ 4 လ တောင်ပြည့်သွားပြီနော်!",
-        "ကို အချိန်မပေးနိုင်တာတွေကို နားလည်ပေးတဲ့အတွက်လည်း ကျေးဇူးပါနော်။ တခါတလေကျရင် နားလည်မှုလွဲတာလေးတွေကို အကောင်းဆုံး ‌ဖြေရှင်းပြီး အတူရှိသွားပါရစေနော်။",
-        "ကိုတို့ နောက်ထပ်အချိန်တွေအကြာကြီး တူတူ ရှိခွင့်ပေးပါနော်။ ကိုတို့ ပြဿနာ‌တွေကို ‌အတူတူ ဖြေရှင်းခဲ့ကြရတာတွေ အကိုတွေ အသိုင်းအဝိုင်းတွေကို ကြောက်ကြောက်နဲ့ ခိုးတွေ့ကြရတာတွေ အများကြီးပေါ့ ဘေဘီရယ်... ဒါတွေကို အမြဲသတိရနေပေးပါနော်။",
-        "ခက်ခက်ခဲခဲ တည်ဆောက်ထားရတဲ့ Relationship မို့ ဘယ်လိုအရာတွေကြုံလာပါစေ အတူတူ ရင်ဆိုင်ကြမယ်နော်။",
-        "ခုမှ အစဆိုပေမယ့် ဘေဘီ ကျောင်းပြီးသွားရင် အမှတ်တရတွေ တူတူ ဖန်တီးကြမယ်နော်။ အများကြီးပေါ့နော်။ ဘေဘီ့ ကောင်လေးဖြစ်ခွင့်ရတာ တကယ်ကို ပျော်ရပါတယ် ဘေဘီရာ။",
-        "နောက်ထပ်လက်ကျန် အချိန်လေးတွေကို ဘေဘီနဲ့ အတူတူ တန်ဖိုးရှိရှိ အတူတူ ဖြတ်သန်းပါရစေနော်။",
-        "ကိုကလေ ဘေဘီ့ကို ချစ်လည်း ချစ်သလို တန်ဖိုးလည်းထားပြီးသားပါနော်။ ဘေဘီ့ဆီက မျှော်လင့်တာဆိုလို့ ဘေဘီ့ရဲ့ အချစ်တွေ သစ္စာတွေဘဲ လိုချင်တာပါနော်။ ကိုကတော့ ဘေဘီ့ကို အချစ်တွေရော သစ္စာတွေရော ပကာသနတွေရော အကုန်ပေးပြီးသား။ အဲ့လဲ့! 😉",
-        "ညဘက်တွေဆိုလည်း စောစော အိပ်ပါနော်။ အရမ်းလည်း မဆိုးပါနဲ့နော်။ ငြိုငြင်တာမဟုပါဘူးနော် ဘေဘီ့ကို လိမ်မာစေချင်တာပါနော်။",
-        "တ‌ခြားယောက်ျား‌လေးတွေ ဘေဘီ့ကိုချစ်တယ်ဆိုတာ ကို ဘေဘီ့ကို စိတ်ဆိုးနေသလောက်တောင် မရှိဘူး သိလားနော်! 😤❤️",
-        "ကိုက သူများတွေလို ချော့လည်း မချော့တတ်ပေမယ့် ကိုယ် ချော့တတ်သလိုတော့ ချော့ပါ့မယ်နော်။ စကားတွေ နုနုရွရွ မပြောတတ်ပေမယ့် စကားကြမ်းတွေထဲမှာ ဘေဘီ့ကို ချစ်တဲ့ အနှစ်တွေမှ အပြည့်ပါဘဲနော်။",
-        "ဘေဘီ ကို့ဘဝထဲကို စဝင်လာကတည်းက မျှော်လင့်ချက်တွေ အင်အားတွေ အပြည့်ရှိလာတယ်သိလား? ဘယ်လောက်ဘဲ Pressure ပိနေပါစေ ဘေဘီ အနားမှာ ရှိနေတယ်ဆိုတာ သတိရသွားတာနဲ့ အလိုလို အားတက် ဟိဟဲ! 😁✨",
-        "ဘေဘီ💞 ကိုလေ ဘေဘီ့ကို အမြဲချစ်တယ်သိလားနော် ရာသက်ပန်ချစ်တာ အဲ့လဲ့ ဟီး! ဘေဘီ့ အနမ်းလေးတွေ လွမ်းနေပြီ ဘေဘီရယ်... 😘",
-        "ကို့ရဲ့ ခလေး... စာကြိုးစားနော်။ စာကိုပိုပြီး အာရုံစိုက်နော်။ ကို စာမပို့လို့ မချစ်တော့ဘူးလား ဆိုပြီး မတွေးမိပါစေနဲ့နော် ဘေဘီကလွဲ ကျန်တဲ့မိန်းမသားတွေဆို No နော့်! 🙅‍♂️",
-        "ဘေဘီ... ကို အမြဲချစ်တယ်နော်! ❤️\n\nHappy 4 Months Anniversary Prr Babe💞"
-    ];
-
-    let currentIndex = 0;
-
-    function answerLove(isLoved) {
-        if (!isLoved) {
-            alert("မလုပ်ပါနဲ့ ကို့ရဲ့ ခလေးရယ် 🥺 ကို့မှာ ချစ်စရာဆိုလို့ ဒီတယောက်ဘဲရှိတာလေနော်... 💕");
-        } else {
-            document.getElementById('quizSection').style.display = 'none';
-            document.getElementById('storySection').style.display = 'block';
-            initStory();
+    <script>
+        function startApp() {
+            document.getElementById('startOverlay').style.display = 'none';
+            var music = document.getElementById('bgMusic');
+            music.play().catch(function(error) {
+                console.log("Audio play failed: ", error);
+            });
         }
-    }
 
-    function initStory() {
-        const dotsContainer = document.getElementById('dotsContainer');
-        dotsContainer.innerHTML = '';
-        story.forEach((_, index) => {
-            const dot = document.createElement('div');
-            dot.className = `dot ${index === 0 ? 'active' : ''}`;
-            dotsContainer.appendChild(dot);
-        });
-        updateScene();
-    }
-
-    function updateScene() {
-        const speechBox = document.getElementById('speechBox');
-        speechBox.style.animation = 'none';
-        speechBox.offsetHeight;
-        speechBox.style.animation = 'fadeIn 0.4s ease-in-out';
-        speechBox.innerText = story[currentIndex];
-
-        const dots = document.querySelectorAll('.dot');
-        dots.forEach((dot, idx) => {
-            dot.classList.toggle('active', idx === currentIndex);
-        });
-
-        document.getElementById('prevBtn').style.visibility = currentIndex === 0 ? 'hidden' : 'visible';
-        
-        const nextBtn = document.getElementById('nextBtn');
-        if (currentIndex === story.length - 1) {
-            nextBtn.innerText = "ပုံလေးတွေကြည့်မယ် 📸";
-        } else {
-            nextBtn.innerText = "ရှေ့သို့ ❤️";
+        function sayYes() {
+            document.getElementById('btnGroup').classList.add('hidden');
+            document.getElementById('loveResponse').classList.remove('hidden');
         }
-    }
 
-    function nextStep() {
-        if (currentIndex < story.length - 1) {
-            currentIndex++;
-            updateScene();
-        } else {
-            document.getElementById('storySection').style.display = 'none';
-            document.getElementById('sceneBox').style.display = 'none';
-            document.getElementById('gallerySection').style.display = 'flex';
-            document.getElementById('headerTitle').innerText = "Our Memories 💖";
+        function moveButton() {
+            var btn = document.getElementById('noBtn');
+            var x = Math.random() * (window.innerWidth - 100);
+            var y = Math.random() * (window.innerHeight - 50);
+            btn.style.position = 'fixed';
+            btn.style.left = x + 'px';
+            btn.style.top = y + 'px';
         }
-    }
-
-    function prevStep() {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateScene();
-        }
-    }
-
-    function restartStory() {
-        currentIndex = 0;
-        document.getElementById('gallerySection').style.display = 'none';
-        document.getElementById('sceneBox').style.display = 'flex';
-        document.getElementById('storySection').style.display = 'block';
-        document.getElementById('headerTitle').innerText = "Happy 4 Months Anniversary 💖";
-        updateScene();
-    }
-</script>
-
+    </script>
 </body>
 </html>
-
